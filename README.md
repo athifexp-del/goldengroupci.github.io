@@ -18,14 +18,19 @@ On peut aussi glisser-déposer une image directement sur un emplacement dans la 
 | `images/accueil-services.jpg` | Accueil — vignette Services numériques | [Photo by Ninthgrid on Unsplash](https://unsplash.com/@ninthgrid_) |
 | `images/accueil-events.jpg` | Accueil — vignette Événementiel | [Photo by Ufoma Ojo on Unsplash](https://unsplash.com/@ladyufoma001) |
 | `images/groupe-siege.jpg` | Page Le groupe — siège / équipe | [Photo by Kenrick Baksh on Unsplash](https://unsplash.com/@kenrick) |
-| `images/gouvernance-1.jpg` | Gouvernance — portrait 1 | [Photo by Fortune Vieyra on Unsplash](https://unsplash.com/@fortunevieyra) |
-| `images/gouvernance-2.jpg` | Gouvernance — portrait 2 | [Photo by Etty Fidele on Unsplash](https://unsplash.com/@fideletty) |
-| `images/gouvernance-3.jpg` | Gouvernance — portrait 3 | [Photo by Dellon Thomas on Unsplash](https://unsplash.com/@elsimage) |
 | `images/pole-btp.jpg` | Pôle BTP & génie civil | [Photo by Mugabi Owen on Unsplash](https://unsplash.com/@spenz_official) |
 | `images/pole-distribution.jpg` | Pôle Distribution audiovisuelle | [Photo by Ali Mkumbwa on Unsplash](https://unsplash.com/@mkumbwajr) |
 | `images/pole-services.jpg` | Pôle Services numériques | [Photo by Emmanuel Ikwuegbu on Unsplash](https://unsplash.com/@emmages) |
 | `images/pole-events.jpg` | Pôle Événementiel | [Photo by Andrea Qoqonga on Unsplash](https://unsplash.com/@filmmakerandrea6) |
 | `images/carrieres-equipe.jpg` | Page Carrières — équipe au travail | [Photo by Ninthgrid on Unsplash](https://unsplash.com/@ninthgrid_) |
+
+## Gouvernance
+
+Les trois portraits de la section Gouvernance sont volontairement laissés en
+emplacement vide (placeholder « Portrait »), en attente des photos réelles des
+dirigeants. Pour les renseigner : glisser-déposer une photo sur l'emplacement,
+ou ajouter `src="./images/gouvernance-1.jpg"` (respectivement `-2`, `-3`) sur
+la balise `<image-slot id="gov-1">` correspondante dans `index.html`.
 
 ## Crédits
 
