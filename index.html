@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="./styles.css">
+<script src="./image-slot.js"></script>
+<style>
+@keyframes ggRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+body { margin: 0; }
+</style>
+</helmet>
+<div data-lang="{{lang}}" data-page="{{page}}" data-dir="{{dir}}" data-switch="{{switchState}}" style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh">
+
+  <div style="background: var(--color-ink); color: var(--color-bg); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-heading)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 9px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+      <div style="display: flex; align-items: center; gap: 14px; color: color-mix(in srgb, #f3f2f0 62%, transparent)">
+        <span lang="fr">Groupe multi-pôles — BTP, distribution, numérique, événementiel</span>
+        <span lang="en">Multi-division group — construction, distribution, digital, events</span>
+        <span style="width: 1px; height: 11px; background: color-mix(in srgb, #f3f2f0 30%, transparent)"></span>
+        <span style="color: var(--color-accent-300)">Abidjan, Côte d'Ivoire</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px">
+        <button type="button" data-langbtn="fr" onClick="{{setFr}}" style="font: inherit; letter-spacing: inherit; text-transform: inherit; background: transparent; border: 1px solid color-mix(in srgb, #f3f2f0 22%, transparent); color: inherit; padding: 3px 9px; cursor: pointer; border-radius: 0">FR</button>
+        <button type="button" data-langbtn="en" onClick="{{setEn}}" style="font: inherit; letter-spacing: inherit; text-transform: inherit; background: transparent; border: 1px solid color-mix(in srgb, #f3f2f0 22%, transparent); color: inherit; padding: 3px 9px; cursor: pointer; border-radius: 0">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-divider)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 40px">
+      <a href="#" onClick="{{goAccueil}}" style="display: block; line-height: 0">
+        <img src="./assets/golden-group-logo.png" alt="Golden Group Holding" style="height: 52px; width: auto">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 30px; font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase">
+        <a href="#" data-nav="accueil" onClick="{{goAccueil}}" style="color: var(--color-text); text-decoration: none; padding-bottom: 3px"><span lang="fr">Accueil</span><span lang="en">Home</span></a>
+        <a href="#" data-nav="groupe" onClick="{{goGroupe}}" style="color: var(--color-text); text-decoration: none; padding-bottom: 3px"><span lang="fr">Le groupe</span><span lang="en">The group</span></a>
+        <a href="#" data-nav="filiales" onClick="{{goFiliales}}" style="color: var(--color-text); text-decoration: none; padding-bottom: 3px"><span lang="fr">Nos pôles</span><span lang="en">Divisions</span></a>
+        <a href="#" data-nav="carrieres" onClick="{{goCarrieres}}" style="color: var(--color-text); text-decoration: none; padding-bottom: 3px"><span lang="fr">Carrières</span><span lang="en">Careers</span></a>
+        <a class="btn btn-primary blueprint" href="#contact" style="letter-spacing: 0.13em; padding: 9px 18px"><span lang="fr">Nous contacter</span><span lang="en">Contact us</span><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section data-route="accueil">
+
+      
+
+      <div data-home-dir="a">
+        <div class="on-ink" style="background: var(--color-ink); position: relative; overflow: hidden">
+          <div style="position: absolute; inset: 0; background-image: linear-gradient(to right, color-mix(in srgb, #f3f2f0 6%, transparent) 1px, transparent 1px); background-size: 103.3px 100%; pointer-events: none"></div>
+          <div style="max-width: 1240px; margin: 0 auto; padding: 104px 32px 88px; position: relative; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: end">
+            <div style="animation: ggRise 0.7s ease both">
+              <div style="display: flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 28px">
+                <span style="width: 46px; height: 1px; background: var(--color-accent)"></span>
+                <span lang="fr">Groupe ivoirien multi-pôles</span>
+                <span lang="en">Ivorian multi-division group</span>
+              </div>
+              <h1 style="font-size: 88px; line-height: 0.94; letter-spacing: -0.02em; margin: 0; color: var(--color-bg); text-wrap: balance">
+                <span lang="fr">Bâtir, distribuer,<br>servir,<br><span style="color: var(--color-accent-400)">rassembler.</span></span>
+                <span lang="en">Build, distribute,<br>serve,<br><span style="color: var(--color-accent-400)">bring together.</span></span>
+              </h1>
+              <p class="text-muted" style="margin: 30px 0 0; max-width: 54ch; font-size: 17px; line-height: 1.6">
+                <span lang="fr">Golden Group est un groupe ivoirien multi-pôles qui conjugue quatre métiers complémentaires — BTP, distribution, services numériques et événementiel — au service du développement économique de la Côte d'Ivoire. Un groupe, une vision, une exigence commune : la performance durable.</span>
+                <span lang="en">Golden Group is an Ivorian multi-division group combining four complementary trades — construction, distribution, digital services and events — in the service of Côte d'Ivoire's economic development. One group, one vision, one shared standard: sustainable performance.</span>
+              </p>
+              <div style="display: flex; gap: 14px; margin-top: 38px">
+                <a class="btn btn-primary blueprint" href="#" onClick="{{goFiliales}}" style="letter-spacing: 0.12em; padding: 12px 22px"><span lang="fr">Découvrir les pôles</span><span lang="en">Explore the divisions</span><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+                <a class="btn btn-secondary" href="#" onClick="{{goGroupe}}" style="letter-spacing: 0.12em; padding: 12px 22px; border-color: color-mix(in srgb, #f3f2f0 26%, transparent); color: var(--color-bg)"><span lang="fr">Le groupe</span><span lang="en">The group</span></a>
+              </div>
+            </div>
+            <figure class="blueprint duotone" style="height: 430px; position: relative">
+              <image-slot id="home-a-hero" shape="rect" placeholder="Photo de référence — chantier, point de vente ou siège" src="./images/accueil-hero.jpg"></image-slot>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </figure>
+          </div>
+          <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px 78px; position: relative">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid color-mix(in srgb, #f3f2f0 20%, transparent)">
+              <div style="padding: 24px 24px 0 0">
+                <div style="font-family: var(--font-heading); font-size: 44px; color: var(--color-accent-400); line-height: 1">04</div>
+                <div class="text-muted" style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Pôles opérationnels</span><span lang="en">Operating divisions</span></div>
+              </div>
+              <div style="padding: 24px 24px 0; border-left: 1px solid color-mix(in srgb, #f3f2f0 20%, transparent)">
+                <div style="font-family: var(--font-heading); font-size: 44px; color: var(--color-accent-400); line-height: 1">Canal+</div>
+                <div class="text-muted" style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Distributeur agréé</span><span lang="en">Authorised distributor</span></div>
+              </div>
+              <div style="padding: 24px 24px 0; border-left: 1px solid color-mix(in srgb, #f3f2f0 20%, transparent)">
+                <div style="font-family: var(--font-heading); font-size: 44px; color: var(--color-accent-400); line-height: 1">CI</div>
+                <div class="text-muted" style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Abidjan et villes de l'intérieur</span><span lang="en">Abidjan and inland cities</span></div>
+              </div>
+              <div style="padding: 24px 0 0 24px; border-left: 1px solid color-mix(in srgb, #f3f2f0 20%, transparent)">
+                <div style="font-family: var(--font-heading); font-size: 44px; color: var(--color-accent-400); line-height: 1">1</div>
+                <div class="text-muted" style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Interlocuteur unique</span><span lang="en">Single point of contact</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 0">
+          <div style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start">
+            <div>
+              <h6 style="color: var(--color-accent-700); margin-bottom: 12px"><span lang="fr">Le groupe en bref</span><span lang="en">The group at a glance</span></h6>
+              <h2 style="font-size: 38px; margin: 0; text-wrap: balance"><span lang="fr">Une expérience éprouvée au service de l'économie ivoirienne</span><span lang="en">Proven experience serving the Ivorian economy</span></h2>
+            </div>
+            <div style="display: grid; gap: 0; border-top: 1px solid var(--color-text)">
+              <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--color-divider); align-items: baseline">
+                <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700)">01</span>
+                <span style="font-size: 15.5px"><span lang="fr">Quatre pôles opérationnels couvrant des secteurs complémentaires.</span><span lang="en">Four operating divisions covering complementary sectors.</span></span>
+              </div>
+              <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--color-divider); align-items: baseline">
+                <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700)">02</span>
+                <span style="font-size: 15.5px"><span lang="fr">Des équipes mobilisées sur l'ensemble du territoire, du siège d'Abidjan aux zones de l'intérieur.</span><span lang="en">Teams deployed nationwide, from the Abidjan head office to inland regions.</span></span>
+              </div>
+              <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--color-divider); align-items: baseline">
+                <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700)">03</span>
+                <span style="font-size: 15.5px"><span lang="fr">Un réseau de distribution couvrant Abidjan et les principales villes de l'intérieur — Daloa, Séguéla et au-delà.</span><span lang="en">A distribution network covering Abidjan and the main inland cities — Daloa, Séguéla and beyond.</span></span>
+              </div>
+              <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; padding: 18px 0; align-items: baseline">
+                <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700)">04</span>
+                <span style="font-size: 15.5px"><span lang="fr">Distributeur agréé Canal+ en Côte d'Ivoire et partenaire d'acteurs institutionnels de premier plan.</span><span lang="en">Authorised Canal+ distributor in Côte d'Ivoire and partner to leading institutional players.</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 0">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 40px; border-bottom: 1px solid var(--color-divider); padding-bottom: 20px">
+            <h2 style="font-size: 40px; margin: 0"><span lang="fr">Nos pôles d'activité</span><span lang="en">Our divisions</span></h2>
+            <span class="text-muted" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase">01 — 04</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; margin-top: 44px">
+            <article class="card blueprint" style="padding: 28px">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+                <div class="card-kicker" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700)"><span lang="fr">BTP &amp; génie civil</span><span lang="en">Construction &amp; civil works</span></div>
+                <span class="text-muted" style="font-family: var(--font-heading); font-size: 12px">01</span>
+              </div>
+              <h3 class="card-title" style="margin: 12px 0 4px; font-size: 27px">Golden BTP</h3>
+              <div class="text-muted" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px"><span lang="fr">Navire amiral du groupe</span><span lang="en">The group's flagship</span></div>
+              <p class="card-body" style="margin: 0; font-size: 14.5px"><span lang="fr">Travaux de bâtiment et de génie civil, avec une expertise affirmée sur les marchés publics : rigueur d'exécution, respect des délais, conformité aux normes en vigueur.</span><span lang="en">Building and civil engineering works with proven public-procurement expertise: disciplined execution, deadlines kept, compliance with applicable standards.</span></p>
+              <figure class="duotone" style="height: 150px; margin-top: 20px; border: 1px solid var(--color-divider)"><image-slot id="home-a-e1" shape="rect" placeholder="Chantier / ouvrage livré" src="./images/accueil-btp.jpg"></image-slot></figure>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 28px">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+                <div class="card-kicker" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700)"><span lang="fr">Distribution audiovisuelle</span><span lang="en">Audiovisual distribution</span></div>
+                <span class="text-muted" style="font-family: var(--font-heading); font-size: 12px">02</span>
+              </div>
+              <h3 class="card-title" style="margin: 12px 0 4px; font-size: 27px">Golden Distribution</h3>
+              <div class="text-muted" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px">BureauSat Center</div>
+              <p class="card-body" style="margin: 0; font-size: 14.5px"><span lang="fr">Distributeur agréé Canal+ : offres audiovisuelles et produits dématérialisés, un réseau étendu de points de vente et un service après-vente réactif.</span><span lang="en">Authorised Canal+ distributor: audiovisual offers and digital products, a wide retail network and responsive after-sales service.</span></p>
+              <figure class="duotone" style="height: 150px; margin-top: 20px; border: 1px solid var(--color-divider)"><image-slot id="home-a-e2" shape="rect" placeholder="Point de vente / équipe commerciale" src="./images/accueil-distribution.jpg"></image-slot></figure>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 28px">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+                <div class="card-kicker" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700)"><span lang="fr">Services numériques</span><span lang="en">Digital services</span></div>
+                <span class="text-muted" style="font-family: var(--font-heading); font-size: 12px">03</span>
+              </div>
+              <h3 class="card-title" style="margin: 12px 0 4px; font-size: 27px">Golden Services</h3>
+              <div class="text-muted" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px"><span lang="fr">Solutions de gestion &amp; SI</span><span lang="en">Management solutions &amp; IT</span></div>
+              <p class="card-body" style="margin: 0; font-size: 14.5px"><span lang="fr">Le pôle héberge la Direction des Systèmes d'Information du groupe et accompagne les entreprises dans la digitalisation de leur gestion, notamment via des solutions ERP (Odoo).</span><span lang="en">The division hosts the group's IT department and supports companies in digitising their management, notably through Odoo ERP deployments.</span></p>
+              <figure class="duotone" style="height: 150px; margin-top: 20px; border: 1px solid var(--color-divider)"><image-slot id="home-a-e3" shape="rect" placeholder="Équipe projet / écran de solution" src="./images/accueil-services.jpg"></image-slot></figure>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 28px">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+                <div class="card-kicker" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700)"><span lang="fr">Événementiel</span><span lang="en">Events</span></div>
+                <span class="text-muted" style="font-family: var(--font-heading); font-size: 12px">04</span>
+              </div>
+              <h3 class="card-title" style="margin: 12px 0 4px; font-size: 27px">Golden Events</h3>
+              <div class="text-muted" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px"><span lang="fr">Événements professionnels &amp; institutionnels</span><span lang="en">Corporate &amp; institutional events</span></div>
+              <p class="card-body" style="margin: 0; font-size: 14.5px"><span lang="fr">Séminaires, conventions, lancements et cérémonies d'entreprise : un modèle d'intermédiation qui mobilise un réseau de prestataires spécialisés, du cadrage à la livraison.</span><span lang="en">Seminars, conventions, launches and corporate ceremonies: an intermediation model mobilising a network of specialist vendors, from brief to delivery.</span></p>
+              <figure class="duotone" style="height: 150px; margin-top: 20px; border: 1px solid var(--color-divider)"><image-slot id="home-a-e4" shape="rect" placeholder="Événement / cérémonie" src="./images/accueil-events.jpg"></image-slot></figure>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+          </div>
+        </div>
+
+        <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 0">
+          <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start">
+            <div>
+              <h6 style="color: var(--color-accent-700); margin-bottom: 14px"><span lang="fr">Un groupe, une vision</span><span lang="en">One group, one vision</span></h6>
+              <h2 style="font-size: 40px; margin: 0 0 18px; text-wrap: balance"><span lang="fr">La croissance se construit par la complémentarité des métiers</span><span lang="en">Growth is built on complementary trades</span></h2>
+              <p class="text-muted" style="font-size: 15.5px; max-width: 46ch"><span lang="fr">Réunies au sein de Golden Group Holding, les activités partagent une gouvernance unifiée, des fonctions support mutualisées et une même ambition. Nos clients trouvent un seul interlocuteur, quel que soit le pôle mobilisé.</span><span lang="en">Brought together under Golden Group Holding, the activities share unified governance, pooled support functions and one ambition. Clients get a single point of contact, whichever division is engaged.</span></p>
+            </div>
+            <div style="display: grid; gap: 1px; background: var(--color-divider)">
+              <div style="background: var(--color-bg); padding: 22px 26px; display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: baseline">
+                <span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700)">01</span>
+                <div><h4 style="margin: 0 0 4px"><span lang="fr">Gouvernance unifiée</span><span lang="en">Unified governance</span></h4><p class="text-muted" style="margin: 0; font-size: 14px"><span lang="fr">Comités de direction, revues de performance périodiques et consolidation financière au niveau du holding.</span><span lang="en">Executive committees, periodic performance reviews and financial consolidation at holding level.</span></p></div>
+              </div>
+              <div style="background: var(--color-bg); padding: 22px 26px; display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: baseline">
+                <span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700)">02</span>
+                <div><h4 style="margin: 0 0 4px"><span lang="fr">Rigueur de gestion</span><span lang="en">Management discipline</span></h4><p class="text-muted" style="margin: 0; font-size: 14px"><span lang="fr">Des standards de qualité mesurables, du chantier au point de vente, et des équipes responsabilisées par objectifs.</span><span lang="en">Measurable quality standards from site to store, and teams accountable against objectives.</span></p></div>
+              </div>
+              <div style="background: var(--color-bg); padding: 22px 26px; display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: baseline">
+                <span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700)">03</span>
+                <div><h4 style="margin: 0 0 4px"><span lang="fr">Ancrage territorial</span><span lang="en">Local roots</span></h4><p class="text-muted" style="margin: 0; font-size: 14px"><span lang="fr">Une présence au plus près des clients, des abonnés et des partenaires, d'Abidjan aux villes de l'intérieur.</span><span lang="en">A presence close to clients, subscribers and partners, from Abidjan to inland cities.</span></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <section data-route="groupe">
+      <div class="on-ink" style="background: var(--color-ink)">
+        <div style="max-width: 1240px; margin: 0 auto; padding: 76px 32px 64px; display: grid; grid-template-columns: 1fr 0.85fr; gap: 64px; align-items: end">
+          <div>
+            <h6 style="color: var(--color-accent-300); margin-bottom: 16px"><span lang="fr">Le groupe</span><span lang="en">The group</span></h6>
+            <h1 style="font-size: 66px; line-height: 0.96; margin: 0; color: var(--color-bg); text-wrap: balance"><span lang="fr">Un groupe structuré pour durer</span><span lang="en">A group structured to last</span></h1>
+          </div>
+          <p class="text-muted" style="font-size: 16.5px; margin: 0"><span lang="fr">Golden Group Holding assure la cohérence stratégique de l'ensemble des pôles : gouvernance, pilotage de la performance, consolidation financière et développement.</span><span lang="en">Golden Group Holding ensures strategic coherence across all divisions: governance, performance steering, financial consolidation and development.</span></p>
+        </div>
+      </div>
+
+      <div style="max-width: 1240px; margin: 0 auto; padding: 80px 32px 0">
+        <div style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start">
+          <div>
+            <h6 style="color: var(--color-accent-700); margin-bottom: 12px"><span lang="fr">Notre histoire</span><span lang="en">Our story</span></h6>
+            <h2 style="font-size: 36px; margin: 0 0 18px"><span lang="fr">D'une entreprise à un groupe</span><span lang="en">From a company to a group</span></h2>
+            <p style="font-size: 16px"><span lang="fr">L'histoire de Golden Group commence avec BureauSat Center, entreprise de distribution audiovisuelle qui s'est imposée comme un acteur de référence de la télévision payante en Côte d'Ivoire. Portée par la vision entrepreneuriale de son fondateur, l'entreprise a progressivement élargi son champ d'action : le BTP d'abord, avec des réalisations sur les marchés publics ; puis les services numériques et l'événementiel.</span><span lang="en">Golden Group's story begins with BureauSat Center, an audiovisual distribution company that became a benchmark player in Ivorian pay-TV. Driven by its founder's entrepreneurial vision, the company progressively widened its scope: construction first, with public-procurement projects; then digital services and events.</span></p>
+            <p class="text-muted" style="font-size: 15.5px"><span lang="fr">Ces activités sont aujourd'hui réunies au sein de Golden Group Holding, marquant le passage d'une entreprise à un groupe : gouvernance unifiée, mutualisation des fonctions support, ambition partagée. Golden Group poursuit sa structuration avec une conviction intacte : la croissance se construit par la complémentarité des métiers, la rigueur de gestion et la confiance des partenaires.</span><span lang="en">These activities are now brought together under Golden Group Holding, marking the shift from a company to a group: unified governance, pooled support functions, shared ambition. Golden Group continues to structure itself with one conviction intact: growth is built on complementary trades, management discipline and the trust of partners.</span></p>
+          </div>
+          <figure class="blueprint duotone" style="height: 340px; position: relative">
+            <image-slot id="groupe-hero" shape="rect" placeholder="Photo du siège ou d'une équipe" src="./images/groupe-siege.jpg"></image-slot>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </figure>
+        </div>
+
+        <div style="margin-top: 88px">
+          <h6 style="color: var(--color-accent-700); margin-bottom: 12px"><span lang="fr">Nos valeurs</span><span lang="en">Our values</span></h6>
+          <h2 style="font-size: 34px; margin: 0"><span lang="fr">Quatre principes, tenus partout</span><span lang="en">Four principles, held everywhere</span></h2>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 30px">
+            <article class="card blueprint" style="padding: 24px">
+              <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">01</div>
+              <h3 style="font-size: 22px; margin: 10px 0 8px"><span lang="fr">Excellence opérationnelle</span><span lang="en">Operational excellence</span></h3>
+              <p class="text-muted" style="margin: 0; font-size: 14px"><span lang="fr">Chaque pôle s'engage sur des standards de qualité mesurables, du chantier au point de vente.</span><span lang="en">Every division commits to measurable quality standards, from site to store.</span></p>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 24px">
+              <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">02</div>
+              <h3 style="font-size: 22px; margin: 10px 0 8px"><span lang="fr">Responsabilité</span><span lang="en">Accountability</span></h3>
+              <p class="text-muted" style="margin: 0; font-size: 14px"><span lang="fr">Des équipes responsabilisées par objectifs, dans une culture du résultat et de la redevabilité.</span><span lang="en">Teams accountable against objectives, in a culture of results and answerability.</span></p>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 24px">
+              <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">03</div>
+              <h3 style="font-size: 22px; margin: 10px 0 8px"><span lang="fr">Proximité</span><span lang="en">Proximity</span></h3>
+              <p class="text-muted" style="margin: 0; font-size: 14px"><span lang="fr">Un ancrage territorial fort, au plus près de nos clients, de nos abonnés et de nos partenaires.</span><span lang="en">Strong local roots, close to our clients, subscribers and partners.</span></p>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 24px">
+              <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">04</div>
+              <h3 style="font-size: 22px; margin: 10px 0 8px"><span lang="fr">Intégrité</span><span lang="en">Integrity</span></h3>
+              <p class="text-muted" style="margin: 0; font-size: 14px"><span lang="fr">Une gouvernance transparente et des pratiques conformes aux exigences légales et réglementaires ivoiriennes.</span><span lang="en">Transparent governance and practices compliant with Ivorian legal and regulatory requirements.</span></p>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+          </div>
+        </div>
+
+        <div style="margin-top: 88px; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start">
+          <div>
+            <h6 style="color: var(--color-accent-700); margin-bottom: 12px"><span lang="fr">Gouvernance</span><span lang="en">Governance</span></h6>
+            <h2 style="font-size: 34px; margin: 0 0 12px"><span lang="fr">Des instances formalisées</span><span lang="en">Formalised governance bodies</span></h2>
+            <p class="text-muted" style="font-size: 15px; margin: 0"><span lang="fr">Le groupe s'est doté d'instances de gouvernance formalisées — comités de direction, revues de performance périodiques — et d'outils de pilotage modernes, garants de la transparence et de la fiabilité attendues par ses partenaires institutionnels et financiers.</span><span lang="en">The group has established formalised governance bodies — executive committees, periodic performance reviews — and modern steering tools, underpinning the transparency and reliability its institutional and financial partners expect.</span></p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px">
+            <div>
+              <figure class="blueprint duotone" style="height: 190px; position: relative"><image-slot id="gov-1" shape="rect" placeholder="Portrait" src="./images/gouvernance-1.jpg"></image-slot><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></figure>
+              <div style="margin-top: 16px; font-family: var(--font-heading); font-size: 19px"><span lang="fr">Présidence</span><span lang="en">Chair</span></div>
+              <div class="text-muted" style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Nom à renseigner</span><span lang="en">Name to be added</span></div>
+            </div>
+            <div>
+              <figure class="blueprint duotone" style="height: 190px; position: relative"><image-slot id="gov-2" shape="rect" placeholder="Portrait" src="./images/gouvernance-2.jpg"></image-slot><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></figure>
+              <div style="margin-top: 16px; font-family: var(--font-heading); font-size: 19px"><span lang="fr">Direction générale</span><span lang="en">Chief executive</span></div>
+              <div class="text-muted" style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Nom à renseigner</span><span lang="en">Name to be added</span></div>
+            </div>
+            <div>
+              <figure class="blueprint duotone" style="height: 190px; position: relative"><image-slot id="gov-3" shape="rect" placeholder="Portrait" src="./images/gouvernance-3.jpg"></image-slot><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></figure>
+              <div style="margin-top: 16px; font-family: var(--font-heading); font-size: 19px"><span lang="fr">Direction financière</span><span lang="en">Finance director</span></div>
+              <div class="text-muted" style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Nom à renseigner</span><span lang="en">Name to be added</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 88px">
+          <h6 style="color: var(--color-accent-700); margin-bottom: 12px"><span lang="fr">Engagement responsable</span><span lang="en">Responsible commitment</span></h6>
+          <h2 style="font-size: 34px; margin: 0"><span lang="fr">Ce que le groupe doit à ses territoires</span><span lang="en">What the group owes its territories</span></h2>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px">
+            <article class="card blueprint" style="padding: 26px">
+              <h3 style="font-size: 23px; margin: 0 0 8px"><span lang="fr">Emploi et compétences</span><span lang="en">Jobs and skills</span></h3>
+              <p class="text-muted" style="margin: 0; font-size: 14.5px"><span lang="fr">Le groupe investit dans la formation continue de ses collaborateurs et la professionnalisation de ses équipes managériales.</span><span lang="en">The group invests in continuous training for its staff and in professionalising its management teams.</span></p>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 26px">
+              <h3 style="font-size: 23px; margin: 0 0 8px"><span lang="fr">Santé et sécurité au travail</span><span lang="en">Health and safety at work</span></h3>
+              <p class="text-muted" style="margin: 0; font-size: 14.5px"><span lang="fr">Un dispositif de conformité santé-sécurité déployé sur l'ensemble des sites, aligné sur le Code du travail ivoirien et ses décrets d'application.</span><span lang="en">A health-and-safety compliance framework deployed across all sites, aligned with the Ivorian Labour Code and its implementing decrees.</span></p>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+            <article class="card blueprint" style="padding: 26px">
+              <h3 style="font-size: 23px; margin: 0 0 8px"><span lang="fr">Ancrage local</span><span lang="en">Local anchoring</span></h3>
+              <p class="text-muted" style="margin: 0; font-size: 14.5px"><span lang="fr">Une présence territoriale qui génère de l'activité économique et des emplois directs et indirects dans plusieurs régions, avec une priorité donnée au recrutement local.</span><span lang="en">A territorial presence generating economic activity and direct and indirect jobs across several regions, with priority given to local hiring.</span></p>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-route="filiales">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 0">
+        <h6 style="color: var(--color-accent-700); margin-bottom: 14px"><span lang="fr">Nos pôles d'activité</span><span lang="en">Our divisions</span></h6>
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: end; border-bottom: 1px solid var(--color-text); padding-bottom: 26px">
+          <h1 style="font-size: 62px; line-height: 0.96; margin: 0; text-wrap: balance"><span lang="fr">Quatre métiers complémentaires</span><span lang="en">Four complementary trades</span></h1>
+          <p class="text-muted" style="margin: 0; font-size: 16px"><span lang="fr">Chaque pôle opère sous sa propre marque et sa propre direction opérationnelle. Sollicitez-en un, ou demandez au holding de les coordonner sur un même projet.</span><span lang="en">Each division operates under its own brand and operational management. Engage one, or ask the holding to coordinate several on one project.</span></p>
+        </div>
+
+        <article style="display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 56px; align-items: start; padding: 64px 0; border-bottom: 1px solid var(--color-divider)">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px">
+              <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700); letter-spacing: 0.16em">01</span>
+              <span class="tag tag-outline" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase"><span lang="fr">BTP &amp; génie civil</span><span lang="en">Construction &amp; civil works</span></span>
+            </div>
+            <h2 style="font-size: 42px; margin: 0 0 2px">Golden BTP</h2>
+            <div class="text-muted" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px"><span lang="fr">Construire les infrastructures de demain</span><span lang="en">Building tomorrow's infrastructure</span></div>
+            <p style="font-size: 15.5px"><span lang="fr">Navire amiral du groupe, Golden BTP intervient dans les travaux de bâtiment et de génie civil, avec une expertise affirmée sur les marchés publics. L'entreprise accompagne l'État, les collectivités et les donneurs d'ordre privés dans la réalisation d'infrastructures durables, en garantissant rigueur d'exécution, respect des délais et conformité aux normes en vigueur.</span><span lang="en">The group's flagship, Golden BTP works in building and civil engineering with proven public-procurement expertise. It supports the State, local authorities and private clients in delivering durable infrastructure, guaranteeing disciplined execution, deadlines kept and compliance with applicable standards.</span></p>
+            <p class="text-muted" style="font-size: 15px"><span lang="fr">Golden BTP est intervenu sur des marchés publics de construction et de réhabilitation pour le compte de l'État et des collectivités territoriales, ainsi que sur des projets privés de bâtiment.</span><span lang="en">Golden BTP has delivered public construction and rehabilitation contracts for the State and local authorities, as well as private building projects.</span></p>
+            <div style="margin-top: 22px; border-top: 1px solid var(--color-divider)">
+              <div class="text-muted" style="padding: 12px 0 6px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase"><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Qualité des ouvrages</span><span lang="en">Quality of the works</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Sécurité sur les chantiers</span><span lang="en">Safety on site</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Mobilisation adaptée aux projets d'envergure</span><span lang="en">Resourcing scaled to major projects</span></div>
+            </div>
+          </div>
+          <figure class="blueprint duotone" style="height: 420px; position: relative">
+            <image-slot id="fil-1" shape="rect" placeholder="Chantier, ouvrage livré" src="./images/pole-btp.jpg"></image-slot>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </figure>
+        </article>
+
+        <article style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; padding: 64px 0; border-bottom: 1px solid var(--color-divider)">
+          <figure class="blueprint duotone" style="height: 420px; position: relative">
+            <image-slot id="fil-2" shape="rect" placeholder="Point de vente, équipe commerciale" src="./images/pole-distribution.jpg"></image-slot>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </figure>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px">
+              <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700); letter-spacing: 0.16em">02</span>
+              <span class="tag tag-outline" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase"><span lang="fr">Distribution</span><span lang="en">Distribution</span></span>
+            </div>
+            <h2 style="font-size: 42px; margin: 0 0 2px">Golden Distribution</h2>
+            <div class="text-muted" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px">BureauSat Center</div>
+            <p style="font-size: 15.5px"><span lang="fr">À travers BureauSat Center, le pôle Distribution assure la commercialisation d'offres audiovisuelles et de produits dématérialisés sur l'ensemble du territoire, en qualité de distributeur agréé Canal+. Fort d'un réseau étendu de points de vente et d'une force commerciale de proximité, le pôle place la satisfaction client, la fidélisation des abonnés et la qualité du service après-vente au cœur de son modèle.</span><span lang="en">Through BureauSat Center, the Distribution division sells audiovisual offers and digital products nationwide as an authorised Canal+ distributor. With a wide retail network and a close-to-the-ground sales force, the division puts customer satisfaction, subscriber loyalty and after-sales quality at the heart of its model.</span></p>
+            <div style="margin-top: 22px; border-top: 1px solid var(--color-divider)">
+              <div class="text-muted" style="padding: 12px 0 6px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase"><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Disponibilité des produits sur tout le réseau</span><span lang="en">Product availability across the network</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Accompagnement des abonnés dans la durée</span><span lang="en">Long-term subscriber support</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Réactivité du service après-vente</span><span lang="en">Responsive after-sales service</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 56px; align-items: start; padding: 64px 0; border-bottom: 1px solid var(--color-divider)">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px">
+              <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700); letter-spacing: 0.16em">03</span>
+              <span class="tag tag-outline" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase"><span lang="fr">Services numériques</span><span lang="en">Digital services</span></span>
+            </div>
+            <h2 style="font-size: 42px; margin: 0 0 2px">Golden Services</h2>
+            <div class="text-muted" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px"><span lang="fr">Le numérique au service de la performance</span><span lang="en">Digital in the service of performance</span></div>
+            <p style="font-size: 15.5px"><span lang="fr">Golden Services regroupe les activités de services et de solutions numériques du groupe. Le pôle héberge la Direction des Systèmes d'Information du groupe et accompagne les entreprises dans la digitalisation de leur gestion, notamment à travers le déploiement de solutions ERP (Odoo).</span><span lang="en">Golden Services brings together the group's services and digital solutions. The division hosts the group's IT department and supports companies in digitising their management, notably through Odoo ERP deployments.</span></p>
+            <div style="margin-top: 22px; border-top: 1px solid var(--color-divider)">
+              <div class="text-muted" style="padding: 12px 0 6px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase"><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Solutions adaptées aux réalités des PME ivoiriennes</span><span lang="en">Solutions fitted to Ivorian SMEs</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Transfert de compétences</span><span lang="en">Skills transfer</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Accompagnement post-déploiement</span><span lang="en">Post-deployment support</span></div>
+            </div>
+          </div>
+          <figure class="blueprint duotone" style="height: 420px; position: relative">
+            <image-slot id="fil-3" shape="rect" placeholder="Équipe projet, écran de solution" src="./images/pole-services.jpg"></image-slot>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </figure>
+        </article>
+
+        <article style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; padding: 64px 0">
+          <figure class="blueprint duotone" style="height: 420px; position: relative">
+            <image-slot id="fil-4" shape="rect" placeholder="Événement, cérémonie, convention" src="./images/pole-events.jpg"></image-slot>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </figure>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px">
+              <span style="font-family: var(--font-heading); font-size: 13px; color: var(--color-accent-700); letter-spacing: 0.16em">04</span>
+              <span class="tag tag-outline" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase"><span lang="fr">Événementiel</span><span lang="en">Events</span></span>
+            </div>
+            <h2 style="font-size: 42px; margin: 0 0 2px">Golden Events</h2>
+            <div class="text-muted" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px"><span lang="fr">Des événements maîtrisés de bout en bout</span><span lang="en">Events controlled end to end</span></div>
+            <p style="font-size: 15.5px"><span lang="fr">Golden Events conçoit et coordonne des événements professionnels et institutionnels : séminaires, conventions, lancements, cérémonies d'entreprise. Son modèle d'intermédiation mobilise un réseau de prestataires spécialisés, garantissant une prestation clé en main, du cadrage à la livraison.</span><span lang="en">Golden Events designs and coordinates professional and institutional events: seminars, conventions, launches and corporate ceremonies. Its intermediation model mobilises a network of specialist vendors, guaranteeing a turnkey service from brief to delivery.</span></p>
+            <div style="margin-top: 22px; border-top: 1px solid var(--color-divider)">
+              <div class="text-muted" style="padding: 12px 0 6px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase"><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Interlocuteur unique</span><span lang="en">A single point of contact</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Maîtrise des délais et des budgets</span><span lang="en">Deadlines and budgets under control</span></div>
+              <div style="padding: 11px 0; border-top: 1px solid var(--color-divider); font-size: 14px"><span lang="fr">Exigence de qualité sur chaque prestation</span><span lang="en">Quality demanded on every service</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section data-route="carrieres">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 0">
+        <h6 style="color: var(--color-accent-700); margin-bottom: 14px"><span lang="fr">Carrières</span><span lang="en">Careers</span></h6>
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: end">
+          <h1 style="font-size: 62px; line-height: 0.96; margin: 0; text-wrap: balance"><span lang="fr">Un métier, un encadrement, une progression</span><span lang="en">A trade, real supervision, a path forward</span></h1>
+          <p class="text-muted" style="margin: 0; font-size: 16px"><span lang="fr">Nous recrutons des profils de terrain comme des fonctions support, avec une priorité donnée au recrutement local dans nos zones d'implantation. La mobilité entre les quatre pôles fait partie du parcours.</span><span lang="en">We hire field profiles and support functions alike, with priority given to local hiring in the areas where we operate. Mobility across the four divisions is part of the path.</span></p>
+        </div>
+        <figure class="duotone blueprint" style="height: 380px; margin-top: 44px; position: relative">
+          <image-slot id="car-hero" shape="rect" placeholder="Photo d'équipe au travail" src="./images/carrieres-equipe.jpg"></image-slot>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+
+        <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px">
+          <article class="card blueprint" style="padding: 26px">
+            <h3 style="font-size: 23px; margin: 0 0 8px"><span lang="fr">Formation continue</span><span lang="en">Continuous training</span></h3>
+            <p class="text-muted" style="margin: 0; font-size: 14.5px"><span lang="fr">Le groupe investit dans la formation de ses collaborateurs et la professionnalisation de ses équipes managériales.</span><span lang="en">The group invests in staff training and in professionalising its management teams.</span></p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </article>
+          <article class="card blueprint" style="padding: 26px">
+            <h3 style="font-size: 23px; margin: 0 0 8px"><span lang="fr">Santé et sécurité</span><span lang="en">Health and safety</span></h3>
+            <p class="text-muted" style="margin: 0; font-size: 14.5px"><span lang="fr">Un dispositif de conformité déployé sur l'ensemble des sites, aligné sur le Code du travail ivoirien et ses décrets d'application.</span><span lang="en">A compliance framework across all sites, aligned with the Ivorian Labour Code and its implementing decrees.</span></p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </article>
+          <article class="card blueprint" style="padding: 26px">
+            <h3 style="font-size: 23px; margin: 0 0 8px"><span lang="fr">Mobilité entre les pôles</span><span lang="en">Mobility across divisions</span></h3>
+            <p class="text-muted" style="margin: 0; font-size: 14.5px"><span lang="fr">Quatre pôles, quatre métiers : les évolutions se construisent aussi d'une activité à l'autre.</span><span lang="en">Four divisions, four trades: careers can also be built from one activity to another.</span></p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </article>
+        </div>
+
+        <div style="margin-top: 88px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--color-text); padding-bottom: 14px">
+            <h2 style="font-size: 34px; margin: 0"><span lang="fr">Postes ouverts</span><span lang="en">Open positions</span></h2>
+            <span class="text-muted" style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase"><span lang="fr">Liste à mettre à jour</span><span lang="en">List to be updated</span></span>
+          </div>
+          <table class="table" style="width: 100%; border-collapse: collapse; margin-top: 4px">
+            <thead>
+              <tr style="text-align: left; font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase">
+                <th style="padding: 14px 0"><span lang="fr">Poste</span><span lang="en">Role</span></th>
+                <th style="padding: 14px 0"><span lang="fr">Pôle</span><span lang="en">Division</span></th>
+                <th style="padding: 14px 0"><span lang="fr">Lieu</span><span lang="en">Location</span></th>
+                <th style="padding: 14px 0"><span lang="fr">Contrat</span><span lang="en">Contract</span></th>
+                <th style="padding: 14px 0"></th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 14.5px">
+              <tr>
+                <td style="padding: 16px 0"><span lang="fr">Conducteur de travaux</span><span lang="en">Site manager</span></td>
+                <td style="padding: 16px 0" class="text-muted">Golden BTP</td>
+                <td style="padding: 16px 0" class="text-muted">Abidjan</td>
+                <td style="padding: 16px 0" class="text-muted">CDI</td>
+                <td style="padding: 16px 0; text-align: right"><a href="mailto:contact@goldengroup.africa" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none"><span lang="fr">Postuler</span><span lang="en">Apply</span></a></td>
+              </tr>
+              <tr>
+                <td style="padding: 16px 0"><span lang="fr">Commercial terrain — télévision payante</span><span lang="en">Field sales — pay-TV</span></td>
+                <td style="padding: 16px 0" class="text-muted">Golden Distribution</td>
+                <td style="padding: 16px 0" class="text-muted">Daloa</td>
+                <td style="padding: 16px 0" class="text-muted">CDI</td>
+                <td style="padding: 16px 0; text-align: right"><a href="mailto:contact@goldengroup.africa" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none"><span lang="fr">Postuler</span><span lang="en">Apply</span></a></td>
+              </tr>
+              <tr>
+                <td style="padding: 16px 0"><span lang="fr">Consultant ERP Odoo</span><span lang="en">Odoo ERP consultant</span></td>
+                <td style="padding: 16px 0" class="text-muted">Golden Services</td>
+                <td style="padding: 16px 0" class="text-muted">Abidjan</td>
+                <td style="padding: 16px 0" class="text-muted">CDI</td>
+                <td style="padding: 16px 0; text-align: right"><a href="mailto:contact@goldengroup.africa" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none"><span lang="fr">Postuler</span><span lang="en">Apply</span></a></td>
+              </tr>
+              <tr>
+                <td style="padding: 16px 0"><span lang="fr">Chargé de production événementielle</span><span lang="en">Event production manager</span></td>
+                <td style="padding: 16px 0" class="text-muted">Golden Events</td>
+                <td style="padding: 16px 0" class="text-muted">Abidjan</td>
+                <td style="padding: 16px 0" class="text-muted">CDD / CDI</td>
+                <td style="padding: 16px 0; text-align: right"><a href="mailto:contact@goldengroup.africa" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none"><span lang="fr">Postuler</span><span lang="en">Apply</span></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="blueprint" style="margin-top: 64px; padding: 34px 40px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap">
+          <div>
+            <h3 style="font-size: 26px; margin: 0 0 4px"><span lang="fr">Candidature spontanée</span><span lang="en">Speculative application</span></h3>
+            <p class="text-muted" style="margin: 0; font-size: 14.5px"><span lang="fr">Envoyez CV et quelques lignes sur le métier qui vous intéresse ; nous répondons à chaque candidature.</span><span lang="en">Send a CV and a few lines about the trade you are after; every application gets an answer.</span></p>
+          </div>
+          <a class="btn btn-primary blueprint" href="mailto:contact@goldengroup.africa" style="letter-spacing: 0.12em; padding: 12px 22px">contact@goldengroup.africa<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="on-ink" style="background: var(--color-ink); margin-top: 96px">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 34px">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; align-items: start">
+        <div>
+          <h3 style="font-size: 30px; margin: 0 0 12px; color: var(--color-bg)"><span lang="fr">Parlons de votre projet</span><span lang="en">Let's talk about your project</span></h3>
+          <p class="text-muted" style="max-width: 34ch; font-size: 14px"><span lang="fr">Un interlocuteur unique pour les quatre pôles du groupe, quel que soit le métier mobilisé.</span><span lang="en">One point of contact for all four divisions, whichever trade your project needs.</span></p>
+          <a class="btn btn-primary blueprint" href="mailto:contact@goldengroup.africa" style="margin-top: 18px; letter-spacing: 0.12em">contact@goldengroup.africa<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+        </div>
+        <div style="display: grid; gap: 9px; font-size: 14px">
+          <h6 style="color: var(--color-accent-300); margin: 0 0 4px"><span lang="fr">Siège</span><span lang="en">Head office</span></h6>
+          <span class="text-muted">Golden Group Holding<br>Abidjan, Côte d'Ivoire</span>
+        </div>
+        <div style="display: grid; gap: 9px; font-size: 14px">
+          <h6 style="color: var(--color-accent-300); margin: 0 0 4px"><span lang="fr">Nos pôles</span><span lang="en">Divisions</span></h6>
+          <a href="#" onClick="{{goFiliales}}" style="text-decoration: none">Golden BTP</a>
+          <a href="#" onClick="{{goFiliales}}" style="text-decoration: none">Golden Distribution</a>
+          <a href="#" onClick="{{goFiliales}}" style="text-decoration: none">Golden Services</a>
+          <a href="#" onClick="{{goFiliales}}" style="text-decoration: none">Golden Events</a>
+        </div>
+        <div style="display: grid; gap: 9px; font-size: 14px">
+          <h6 style="color: var(--color-accent-300); margin: 0 0 4px"><span lang="fr">Le groupe</span><span lang="en">The group</span></h6>
+          <a href="#" onClick="{{goGroupe}}" style="text-decoration: none"><span lang="fr">Notre histoire</span><span lang="en">Our story</span></a>
+          <a href="#" onClick="{{goGroupe}}" style="text-decoration: none"><span lang="fr">Gouvernance</span><span lang="en">Governance</span></a>
+          <a href="#" onClick="{{goCarrieres}}" style="text-decoration: none"><span lang="fr">Carrières</span><span lang="en">Careers</span></a>
+        </div>
+      </div>
+      <div style="margin-top: 56px; padding-top: 18px; border-top: 1px solid color-mix(in srgb, #f3f2f0 16%, transparent); display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-heading); color: color-mix(in srgb, #f3f2f0 45%, transparent)">
+        <span>© 2026 Golden Group Holding</span>
+        <span><span lang="fr">Mentions légales · Confidentialité</span><span lang="en">Legal notice · Privacy</span></span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440}, &quot;language&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;fr&quot;, &quot;en&quot;], &quot;default&quot;: &quot;fr&quot;, &quot;tsType&quot;: &quot;&#x27;fr&#x27; | &#x27;en&#x27;&quot;, &quot;section&quot;: &quot;Contenu&quot;}}">
+class Component extends DCLogic {
+  state = { lang: this.props.language ?? 'fr', page: 'accueil', dir: 'a' };
+  go(page) { return (e) => { if (e) e.preventDefault(); this.setState({ page }); window.scrollTo(0, 0); }; }
+  renderVals() {
+    return {
+      lang: this.state.lang,
+      page: this.state.page,
+      dir: this.state.dir,
+      switchState: 'off',
+      setFr: () => this.setState({ lang: 'fr' }),
+      setEn: () => this.setState({ lang: 'en' }),
+      goAccueil: this.go('accueil'),
+      goGroupe: this.go('groupe'),
+      goFiliales: this.go('filiales'),
+      goCarrieres: this.go('carrieres')
+    };
+  }
+}
+</script>
+</body>
+</html>
