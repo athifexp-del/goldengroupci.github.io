@@ -502,15 +502,27 @@ body { margin: 0; }
 
   <footer id="contact" class="on-ink" style="background: var(--color-ink); margin-top: 96px">
     <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 34px">
-      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; align-items: start">
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; align-items: center; padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid color-mix(in srgb, #f3f2f0 16%, transparent)">
+        <div>
+          <h6 style="color: var(--color-accent-300); margin: 0 0 10px"><span lang="fr">Siège social</span><span lang="en">Head office</span></h6>
+          <h3 style="font-size: 26px; margin: 0 0 10px; color: var(--color-bg)">Golden Group Holding</h3>
+          <p class="text-muted" style="margin: 0 0 18px; font-size: 15px; line-height: 1.6"><span lang="fr">Cocody — Bonoumin<br>Abidjan, Côte d'Ivoire</span><span lang="en">Cocody — Bonoumin<br>Abidjan, Côte d'Ivoire</span></p>
+          <div class="text-muted" style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-heading); margin-bottom: 20px"><span lang="fr">5.371503° N · 3.968261° O</span><span lang="en">5.371503° N · 3.968261° W</span></div>
+          <a class="btn btn-primary blueprint" href="https://www.google.com/maps/dir/?api=1&amp;destination=5.371503,-3.968261" target="_blank" rel="noopener noreferrer" style="letter-spacing: 0.12em"><span lang="fr">Itinéraire</span><span lang="en">Directions</span><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+        </div>
+        <div>
+          <figure class="blueprint" style="margin: 0; position: relative; aspect-ratio: 16 / 10; overflow: hidden">
+            <iframe title="Carte du siège de Golden Group Holding — Cocody Bonoumin, Abidjan" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.971761%2C5.368003%2C-3.964761%2C5.375003&amp;layer=mapnik&amp;marker=5.371503%2C-3.968261" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(0.55) sepia(0.32) contrast(0.96) brightness(0.98)"></iframe>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </figure>
+          <div class="text-muted" style="margin-top: 10px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-family: var(--font-heading)"><span lang="fr">Fond de carte © OpenStreetMap</span><span lang="en">Map data © OpenStreetMap</span></div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; align-items: start">
         <div>
           <h3 style="font-size: 30px; margin: 0 0 12px; color: var(--color-bg)"><span lang="fr">Parlons de votre projet</span><span lang="en">Let's talk about your project</span></h3>
           <p class="text-muted" style="max-width: 34ch; font-size: 14px"><span lang="fr">Un interlocuteur unique pour les quatre pôles du groupe, quel que soit le métier mobilisé.</span><span lang="en">One point of contact for all four divisions, whichever trade your project needs.</span></p>
           <a class="btn btn-primary blueprint" href="mailto:contact@goldengroup.africa" style="margin-top: 18px; letter-spacing: 0.12em">contact@goldengroup.africa<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
-        </div>
-        <div style="display: grid; gap: 9px; font-size: 14px">
-          <h6 style="color: var(--color-accent-300); margin: 0 0 4px"><span lang="fr">Siège</span><span lang="en">Head office</span></h6>
-          <span class="text-muted">Golden Group Holding<br>Abidjan, Côte d'Ivoire</span>
         </div>
         <div style="display: grid; gap: 9px; font-size: 14px">
           <h6 style="color: var(--color-accent-300); margin: 0 0 4px"><span lang="fr">Nos pôles</span><span lang="en">Divisions</span></h6>

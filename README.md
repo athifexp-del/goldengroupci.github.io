@@ -38,6 +38,22 @@ identique quelle que soit la largeur d'écran, ce qui garantit que les visages
 restent entiers. Ne pas remettre de `height` fixe sur ces `<figure>` — un cadre
 paysage recoupe les têtes.
 
+## Siège social
+
+Le pied de page (présent sur toutes les pages) porte un bloc « Siège social »
+avec une carte OpenStreetMap centrée sur les coordonnées du siège :
+
+- **Coordonnées** : `5.371503, -3.968261`
+- **Quartier** : Cocody — Bonoumin, Abidjan
+- Le bouton « Itinéraire » ouvre Google Maps sur ces coordonnées.
+- La carte est une iframe `openstreetmap.org/export/embed.html` en
+  `loading="lazy"` : pas de clé d'API, pas de cookie de suivi, donc aucune
+  bannière de consentement nécessaire. Le `bbox` encadre le point à ±0,0035°.
+
+Pour déplacer le siège, mettre à jour au même endroit : le `bbox` et le
+`marker` de l'iframe, le `destination` du lien Itinéraire, et les coordonnées
+affichées en toutes lettres.
+
 ## Crédits
 
 Photos de calage issues d'Unsplash (licence Unsplash : usage commercial autorisé, attribution non obligatoire). Les mentions en filigrane ont été retirées des images ; les crédits sont conservés dans le tableau ci-dessus à titre de trace. Ces visuels sont des images de calage, à remplacer par les photos Golden Group.
