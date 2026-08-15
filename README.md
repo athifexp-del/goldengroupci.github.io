@@ -26,17 +26,17 @@ On peut aussi glisser-déposer une image directement sur un emplacement dans la 
 
 ## Gouvernance
 
+La section présente deux portraits :
+
 | Poste | Nom | Photo |
 |---|---|---|
-| Présidence | Koffi Tahi | `images/gouvernance-1.jpg` |
-| Direction générale | à renseigner | emplacement vide |
+| Président-directeur général | Koffi Tahi | `images/gouvernance-1.jpg` |
 | Direction financière | Dohou Boris | `images/gouvernance-3.jpg` |
 
-Le portrait de la direction générale est laissé en emplacement vide
-(placeholder « Portrait »), en attente de la photo réelle. Pour le renseigner :
-ajouter `src="./images/gouvernance-2.jpg"` sur la balise
-`<image-slot id="gov-2">` dans `index.html`, et remplacer le
-« Nom à renseigner » juste en dessous.
+Les cadres sont en `aspect-ratio: 3 / 4` (format portrait) : le recadrage reste
+identique quelle que soit la largeur d'écran, ce qui garantit que les visages
+restent entiers. Ne pas remettre de `height` fixe sur ces `<figure>` — un cadre
+paysage recoupe les têtes.
 
 ## Crédits
 
