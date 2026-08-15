@@ -26,11 +26,17 @@ On peut aussi glisser-déposer une image directement sur un emplacement dans la 
 
 ## Gouvernance
 
-Les trois portraits de la section Gouvernance sont volontairement laissés en
-emplacement vide (placeholder « Portrait »), en attente des photos réelles des
-dirigeants. Pour les renseigner : glisser-déposer une photo sur l'emplacement,
-ou ajouter `src="./images/gouvernance-1.jpg"` (respectivement `-2`, `-3`) sur
-la balise `<image-slot id="gov-1">` correspondante dans `index.html`.
+| Poste | Nom | Photo |
+|---|---|---|
+| Présidence | Koffi Tahi | `images/gouvernance-1.jpg` |
+| Direction générale | à renseigner | emplacement vide |
+| Direction financière | à renseigner | emplacement vide |
+
+Les deux portraits restants sont laissés en emplacement vide (placeholder
+« Portrait »), en attente des photos réelles. Pour en renseigner un : ajouter
+`src="./images/gouvernance-2.jpg"` (respectivement `-3`) sur la balise
+`<image-slot id="gov-2">` correspondante dans `index.html`, et remplacer le
+« Nom à renseigner » juste en dessous.
 
 ## Crédits
 
