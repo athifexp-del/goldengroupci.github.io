@@ -30,12 +30,12 @@ On peut aussi glisser-déposer une image directement sur un emplacement dans la 
 |---|---|---|
 | Présidence | Koffi Tahi | `images/gouvernance-1.jpg` |
 | Direction générale | à renseigner | emplacement vide |
-| Direction financière | à renseigner | emplacement vide |
+| Direction financière | Dohou Boris | `images/gouvernance-3.jpg` |
 
-Les deux portraits restants sont laissés en emplacement vide (placeholder
-« Portrait »), en attente des photos réelles. Pour en renseigner un : ajouter
-`src="./images/gouvernance-2.jpg"` (respectivement `-3`) sur la balise
-`<image-slot id="gov-2">` correspondante dans `index.html`, et remplacer le
+Le portrait de la direction générale est laissé en emplacement vide
+(placeholder « Portrait »), en attente de la photo réelle. Pour le renseigner :
+ajouter `src="./images/gouvernance-2.jpg"` sur la balise
+`<image-slot id="gov-2">` dans `index.html`, et remplacer le
 « Nom à renseigner » juste en dessous.
 
 ## Crédits
